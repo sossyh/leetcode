@@ -9,6 +9,6 @@ class Solution:
            
         result.sort()
         for i in result:
-            i.pop(0)
+            del(i[0])
         
         return result[:k]
