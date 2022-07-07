@@ -1,0 +1,13 @@
+class Solution:
+    def maxOperations(self, nums: List[int], k: int) -> int:
+        count=0
+        nums.sort()
+        for i in nums:
+            for l in nums:
+                if(i+l==k):
+                    count=count+1
+                    nums.remove(i)
+                    nums.remove(l)
+                
+                    
+        return count
