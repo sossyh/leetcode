@@ -1,0 +1,42 @@
+class Solution:
+    def findOriginalArray(self, changed: List[int]) -> List[int]:
+        result1=[]
+        result2=[]
+        results1=[]
+        results2=[]
+        sort=sorted(changed)
+        a=len(changed)
+        list1=changed[0:a//2]
+        list2=changed[a//2:a]
+        lists1=sort[0:a//2]
+        lists2=sort[a//2:a]
+        for i in list1:
+            if i*2 in list2:
+                result1.append(i)
+                list2.remove(i*2)
+        for j in list2:
+            if j*2 in list1:
+                result2.append(j)
+                list1.remove(j*2)
+        for k in lists1:
+            if k*2 in lists2:
+                results1.append(k)
+                lists2.remove(k*2)
+        for m in lists2:
+            if m*2 in lists1:
+                results2.append(m)
+                lists1.remove(m*2)
+        if(a%2!=0):
+            return []
+        elif(len(list1)==len(result1)):
+            return list1
+        elif(len(lists1)==len(results1)):
+            return lists1
+        elif(len(list2)==len(result2)):
+            return list2
+        
+        elif(len(lists2)==len(results2)):
+            return lists2
+        else:
+            return []
+        
