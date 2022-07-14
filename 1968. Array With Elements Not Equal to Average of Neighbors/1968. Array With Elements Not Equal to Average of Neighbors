@@ -1,0 +1,29 @@
+class Solution:
+    def rearrangeArray(self, nums: List[int]) -> List[int]:
+        result=[]
+        odd=[]
+        even=[]
+        oddindexes=[]
+        evenindexes=[]
+        for i in range(len(nums)):
+            result.append(0)
+        sum1=sum(nums)
+        number=len(nums)
+        mean=sum1/number
+        for i in range(len(nums)):
+            if(nums[i]<mean):
+                odd.append(nums[i])
+            else:
+                even.append(nums[i])
+        for x in range(0,number,2):
+            evenindexes.append(x)
+        
+        for x in range(1,number,2):
+            oddindexes.append(x)
+        for (index, replacement) in zip(oddindexes, odd):
+            nums[index] = replacement
+        for (index, replacement) in zip(evenindexes, even):
+            nums[index] = replacement
+        return nums
+                
+    
