@@ -6,11 +6,7 @@ class Solution:
         for i in arr:
              d[i] = (d[i] + 1) if (i in d) else 1
             
-            # count=0
-            # for j in arr:
-            #     if(i==j):
-            #         count=count+1
-            #         d[i]=count
+          
         for i in d:
             frequency.append(d[i])
         
@@ -24,4 +20,4 @@ class Solution:
                 return c
                 
             
-        return  frequency     
+            
